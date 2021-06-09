@@ -119,7 +119,6 @@ PyScreeze==0.1.27
 python-dateutil==2.8.1
 python-slugify==4.0.1
 PyTweening==1.0.3
-pywin32==300
 pywinpty==0.5.7
 PyYAML==5.4.1
 pyzmq==20.0.0
