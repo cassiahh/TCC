@@ -1,23 +1,23 @@
 venv
-scratch.py
-modelo.py
-frank.py
 data
 static
 notebooks
-README.md
-BTC-USD.csv
-.vscode
-file_reference.py
-.idea
-#src
-#.streamlit
-caching.py
 test
+.vscode
+.idea
+__pycache__
+
+scratch.py
+modelo.py
+frank.py
+file_reference.py
+caching.py
 hashing.py
 ForwardMsgCache.py
-__requirements.txt
+
+README.md
+BTC-USD.csv
 Python.gitignore
-__pycache__
+
 
 
