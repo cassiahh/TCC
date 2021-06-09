@@ -27,8 +27,9 @@ def graph_candlestick(data):
     layout = go.Layout()
 
     fig = go.Figure(data=data, layout=layout)
-    result = fig.show()
-    st.write('Gráfico aberto em uma nova aba para melhor visualização')
+    return fig
+    #result = fig.show()
+    #st.write('Gráfico aberto em uma nova aba para melhor visualização')
 
 
 # Gráfico Scatterplot

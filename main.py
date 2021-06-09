@@ -55,8 +55,9 @@ if __name__ == '__main__':
         controller.show_raw_data(controller.data)
 
         st.subheader('Gráfico Candlestick')
+        candlestick = st.empty()
         if st.button('abrir'):
-            graph_candlestick(controller.data)
+            candlestick.plotly_chart(graph_candlestick(controller.data))
 
         st.subheader('Estatística Descritiva')
         if st.checkbox('veja Síntese'):
@@ -69,9 +70,9 @@ if __name__ == '__main__':
                 st.write('O Coeficiente de correlação de Pearson entre o Preço fechamento e o Volume transacionado é de:  %f ' % (controller.data['Close'].corr(controller.data['Volume'])))
                 #AttributeError: 'float' object has no attribute 'shape'
             except AttributeError:
-                st.pyplot(graph_scatterplot(controller.data))
-            finally:
-                st.write('Temporariamente indisponível para o ticker selecionado')
+                graph_scatterplot(controller.data)
+            except:
+                st.write('Temporariamente indisponível: reinsira o ticker')
                 #pass
 
         st.subheader('Variação diária dos preços')
