@@ -54,9 +54,9 @@ if __name__ == '__main__':
     if controller.data is not None:
         controller.show_raw_data(controller.data)
 
-        st.subheader('Gráfico Candlestick')
-        candlestick = st.empty()
-        if st.button('abrir'):
+        st.subheader('Análise gráfica de mercado')
+        if st.checkbox('Gráfico Candlestick'):
+            candlestick = st.empty()
             candlestick.plotly_chart(graph_candlestick(controller.data))
 
         st.subheader('Estatística Descritiva')
