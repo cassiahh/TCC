@@ -147,7 +147,7 @@ if __name__ == '__main__':
             except: # AttributeError as e:
                 st.warning('Construa e treine os 2 modelos')
 
-    gc.collect()
+    #gc.collect()
 
     #faq()
     #st_faq()
