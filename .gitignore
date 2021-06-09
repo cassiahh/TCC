@@ -10,7 +10,6 @@ BTC-USD.csv
 .vscode
 file_reference.py
 .idea
-run.py
 #src
 #.streamlit
 caching.py
