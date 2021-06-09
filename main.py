@@ -11,7 +11,7 @@ rcParams['figure.figsize'] = 16, 12
 plt.style.use('ggplot')
 import warnings
 warnings.filterwarnings("ignore")
-import pyautogui
+#import pyautogui
 
 #StreamlitAPIException: set_page_config() can only be called once per app, and must be called as the first Streamlit command in your script.
 try:
@@ -22,7 +22,8 @@ try:
         initial_sidebar_state="expanded",
         )
 except:
-    pyautogui.hotkey('f5')
+    pass
+    #pyautogui.hotkey('f5')
 
 
 st.title('ANÁLISE DE ETF NO MERCADO COM ML')
