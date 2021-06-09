@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from matplotlib.pylab import rcParams
 rcParams['figure.figsize'] = 16, 12
 plt.style.use('ggplot')
+import gc
 import warnings
 warnings.filterwarnings("ignore")
 #import pyautogui
@@ -146,6 +147,7 @@ if __name__ == '__main__':
             except: # AttributeError as e:
                 st.warning('Construa e treine os 2 modelos')
 
+    gc.collect()
 
     #faq()
     #st_faq()
