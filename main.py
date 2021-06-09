@@ -55,7 +55,7 @@ if __name__ == '__main__':
         controller.show_raw_data(controller.data)
 
         st.subheader('Análise gráfica de mercado')
-        if st.checkbox('Gráfico Candlestick'):
+        if st.checkbox('gráfico Candlestick'):
             candlestick = st.empty()
             candlestick.plotly_chart(graph_candlestick(controller.data))
 
