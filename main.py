@@ -109,27 +109,32 @@ if __name__ == '__main__':
         controller.set_parameters()
         #st.write('***** rodou set_parameters *****')
 
-        #try:
+    #try:
         st.header('Máquina Preditiva com LSTM networks')
-        #predict_btn1 = st.button('Clique para construir modelo 1')
-        #if predict_btn1:
-        if st.checkbox('Clique para construir modelo 1'):
+        predict_btn1 = st.button('Clique para construir modelo 1')
+        if predict_btn1:
+        #if st.checkbox('Clique para construir modelo 1'):
             controller.vanilla_lstm_predict(controller.neurons , look_back, controller.opt, controller.epochs, controller.batch_size)
             #st.write(controller.neurons , look_back, controller.opt, controller.epochs, controller.batch_size)
             #st.write('***** rodou vanilla_lstm_predict *****')
         #    graph_predict(controller.scaler, controller.y_test, controller.prediction)
             #st.write('***** rodou graph_predict model 1 *****')
+            empty_model2 = st.empty()
+            st.header('Máquina Preditiva com Stacked LSTM')
+            empty_model2.checkbox('Clique para construir modelo 2')
+            empty_model2.checkbox('Clique para construir modelo 2', True)
 
-
-        st.header('Máquina Preditiva com Stacked LSTM')
+        #st.header('Máquina Preditiva com Stacked LSTM')
+        # empty_model2 = st.empty()
+        # empty_model2.checkbox('Clique para construir modelo 2')
         # if st.button('Clique para construir modelo 2'):
-        if st.checkbox('Clique para construir modelo 2'):
+        #if st.checkbox('Clique para construir modelo 2'):
             controller.stacked_lstm_predict(look_back, controller.opt, controller.epochs, controller.batch_size)
             #st.write(controller.neurons , look_back, controller.opt, controller.epochs, controller.batch_size)
             #st.write('***** rodou stacked_lstm_predict *****')
             # graph_predict(controller.scaler, controller.y_test, controller.prediction)
             #st.write('***** rodou graph_predict model 2 *****')
-
+            
             try:
                 #st.dataframe(controller.prediction_inverse)
                 #st.header('Comparação dos modelos das Máquinas Preditivas')
