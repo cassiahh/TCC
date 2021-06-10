@@ -2,7 +2,7 @@
 from src.graph import graph_predict, graph_compare_models
 
 import streamlit as st
-from streamlit.caching import cache
+#from streamlit.caching import cache
 import pandas as pd
 from pandas_datareader import data as web
 import numpy as np
@@ -19,7 +19,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 from io import StringIO
-from datetime import date, tzinfo, timezone, datetime
+#from datetime import date, tzinfo, timezone, datetime
 import sys
 import matplotlib.pyplot as plt
 from matplotlib.pylab import rcParams
