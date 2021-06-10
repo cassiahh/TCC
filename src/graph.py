@@ -12,7 +12,7 @@ warnings.filterwarnings("ignore")
 
 
 #  Gráfico Candlestick
-@st.cache(suppress_st_warning=True)
+@st.cache(allow_output_mutation=True, suppress_st_warning=True)
 def graph_candlestick(data):
     candlestick = {
         'x': data.index,
