@@ -1,8 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
-from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
+from htbuilder import HtmlElement, div, br, hr, a, p, img, styles
 from htbuilder.units import percent, px
-from htbuilder.funcs import rgba, rgb
 
 #https://playground.tensorflow.org/
 
