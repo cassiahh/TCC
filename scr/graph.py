@@ -25,11 +25,8 @@ def graph_candlestick(data):
     }
     data = [candlestick]
     layout = go.Layout()
-
     fig = go.Figure(data=data, layout=layout)
     return fig
-    #result = fig.show()
-    #st.write('Gráfico aberto em uma nova aba para melhor visualização')
 
 
 # Gráfico Scatterplot
@@ -41,17 +38,16 @@ def graph_scatterplot(data):
     plt.ylabel('Volume transacionado', fontsize=12)
     plt.title("Preço fechamento X Volume transacionado")
     st.pyplot(fig)
-    #AttributeError: 'float' object has no attribute 'shape'
-    #st.write('O Coeficiente de correlação de Pearson entre o Preço fechamento e o Volume transacionado é de:  %f ' % (data['Close'].corr(data['Volume'])))
-    #return fig
+
 
 @st.cache
 def graph_plot(titulo, labelx, labely, x, y, dataset):
     ax = sns.lineplot(x=x, y=y, data=dataset)
-    ax.figure.set_size_inches(12,6)
+    ax.figure.set_size_inches(12, 6)
     ax.set_title(titulo, loc='left', fontsize=18)
     ax.set_xlabel(labelx, fontsize=12)
     ax.set_ylabel(labely, fontsize=12)
+
 
 # Função de plot de graficos para comparação
 @st.cache

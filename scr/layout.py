@@ -4,9 +4,7 @@ from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, class
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
 
-#https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.51083&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
-
-print(__name__)
+#https://playground.tensorflow.org/
 
 
 def disclaimer():
@@ -228,8 +226,6 @@ def faq():
         height=600,
     )
 
-#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-#
 #Change backgroud
 # st.markdown(
 #   """
@@ -245,19 +241,3 @@ def faq():
 #   unsafe_allow_html=True
 # )
 #
-# Hide default footer
-# hide_footer_style = """
-# <style>
-# .reportview-container .main footer {visibility: hidden;}
-# """
-# st.markdown(hide_footer_style, unsafe_allow_html=True)
-#
-#Page config
-# st.set_page_config(
-#     page_title="LSTM App for ETF",
-#     page_icon="chart_with_upwards_trend",
-#     layout="wide",
-#     initial_sidebar_state="expanded",
-#     )
-#
-#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
