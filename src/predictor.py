@@ -36,7 +36,7 @@ class Predictor:
     def ticker_selector(self):
         try:
             form = st.form(key='ticker_form')
-            ticker = form.text_input('Insira um código de ETF (exemplo: BOVA11.SA, IVVB11.SA, SMAC11.SA)')
+            ticker = form.text_input('Insira um código de ETF')
             submit = form.form_submit_button('Inserir')
             global data
             if not ticker:
