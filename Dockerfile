@@ -21,6 +21,7 @@ COPY ./src /src
 COPY ./main.py /
 
 #ENTRYPOINT [ "streamlit run" ]
+RUN streamlit run
 CMD [ "main.py" ]
 
 EXPOSE 8501
