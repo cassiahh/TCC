@@ -19,9 +19,11 @@ WORKDIR /usr
 RUN mkdir /src
 COPY ./src /src
 COPY ./main.py /
+COPY . .
 
 #ENTRYPOINT [ "streamlit run" ]
-RUN streamlit run
-CMD [ "main.py" ]
+#RUN streamlit run
+#CMD [ "main.py" ]
+CMD streamlit run main.py
 
 EXPOSE 8501
