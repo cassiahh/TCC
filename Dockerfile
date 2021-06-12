@@ -8,6 +8,8 @@ RUN mkdir /src
 COPY ./src /src
 COPY ./main.py /
 
-ENTRYPOINT [ "streamlit run" ]
+#ENTRYPOINT [ "streamlit run" ]
+#CMD [ "main.py" ]
+CMD streamlit run main.py
 
-CMD [ "main.py" ]
+EXPOSE 8501
