@@ -18,7 +18,7 @@ RUN pip3 install streamlit
 # Path
 #ENV PATH="/opt/venv/bin:$PATH"
 
-RUN mkdir /src
+#RUN mkdir /src
 COPY ./src /src
 COPY ./main.py /
 COPY . .
@@ -26,6 +26,7 @@ COPY . .
 #ENTRYPOINT [ "streamlit run" ]
 #RUN streamlit run
 #CMD [ "main.py" ]
+RUN streamlit run main.py
 CMD streamlit run main.py
 
 EXPOSE 8501
