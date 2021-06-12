@@ -12,7 +12,7 @@ WORKDIR /usr
 RUN pip install --upgrade pip
 COPY ./requirements.txt ./
 RUN pip3 install -r requirements.txt
-RUN pip3 install streamlit
+#RUN pip3 install streamlit
 
 
 # Path
@@ -23,10 +23,9 @@ COPY ./src /src
 COPY ./main.py /
 COPY . .
 
-#ENTRYPOINT [ "streamlit run" ]
+ENTRYPOINT [ "streamlit", "run" ]
 #RUN streamlit run
-#CMD [ "main.py" ]
-RUN streamlit run main.py
-CMD streamlit run main.py
+CMD [ "main.py" ]
+
 
 EXPOSE 8501
