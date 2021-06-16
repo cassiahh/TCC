@@ -80,7 +80,8 @@ def st_faq():
         """)
     with st.sidebar.beta_expander("Sobre"):
         st.write("""
-            Esta página foi produzida com finalidade exclusivamente acadêmica, é parte integrante do TCC "Análise de ETF no mercado brasileiro com ML" de Cássia Chin do curso ADS - IFSP. \n
+            Esta página foi produzida com finalidade exclusivamente acadêmica.\n 
+            É parte integrante do TCC "Análise de ETF no mercado brasileiro com ML" de Cássia Chin do curso ADS - IFSP. \n
         """)
 
 def image(src_as_string, **style):
