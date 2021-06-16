@@ -69,7 +69,6 @@ def st_faq():
         """)
     with st.sidebar.beta_expander("Termos de Serviço"):
         st.write("""
-            Esta página foi produzida com finalidade exclusivamente acadêmica, é parte integrante do TCC "Análise de ETF no mercado brasileiro com ML" de Cássia Chin do curso ADS - IFSP. \n
             O usuário declara que tem a idade mínima necessária para celebrar um contrato válido.\n
             Como não há necessidade de efetuar login, ao acessar a aplicação, o usuário está de acordo com os Termos e as Políticas descritas.\n
             É proibido usar indevidamente ou interferir nos Serviços.\n
@@ -79,7 +78,10 @@ def st_faq():
             quaisquer danos indiretos, especiais, incidentais, consequentes, agudos ou outros danos múltiplos, exemplares ou punitivos decorrentes ou relacionados a estes termos ou ao seu uso dos serviços. 
             Assim como, por eventuais litígios decorrentes ou relacionados a estes termos ou serviços
         """)
-
+    with st.sidebar.beta_expander("Sobre"):
+        st.write("""
+            Esta página foi produzida com finalidade exclusivamente acadêmica, é parte integrante do TCC "Análise de ETF no mercado brasileiro com ML" de Cássia Chin do curso ADS - IFSP. \n
+        """)
 
 def image(src_as_string, **style):
     return img(src=src_as_string, style=styles(**style))
