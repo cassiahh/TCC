@@ -21,11 +21,12 @@ RUN pip3 install -r requirements.txt
 #RUN mkdir /src
 COPY ./src /src
 COPY ./main.py /
-COPY . .
+#COPY . .
 
-ENTRYPOINT [ "streamlit", "run" ]
-#RUN streamlit run
-CMD [ "main.py" ]
+#ENTRYPOINT [ "streamlit", "run" ]
+##RUN streamlit run
+#CMD [ "main.py" ]
 
+CMD [ "streamlit", "run", "main.py" ]
 
 EXPOSE 8501
