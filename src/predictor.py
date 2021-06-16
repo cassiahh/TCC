@@ -211,9 +211,9 @@ class Predictor:
             porcentagem = (((self.prediction_inverse[-1]-self.prediction_inverse[-2])/self.prediction_inverse[-2])*100)
             #st.write ('pos D-1: ',prediction_inverse[-9], 'pos D: ', prediction_inverse[-10])
             if self.prediction_inverse[-1] > self.prediction_inverse[-2]:
-                st.write('Segundo modelo, o valor vai subir em torno de %.6f %%' % (float(porcentagem)))
+                st.write('Segundo modelo 1, o valor vai subir em torno de %.6f %%' % (float(porcentagem)))
             else:
-                st.write('Segundo modelo, o valor vai cair em torno de %.6f %%' % (float(-porcentagem)))
+                st.write('Segundo modelo 1, o valor vai cair em torno de %.6f %%' % (float(-porcentagem)))
             #ValueError: y_true and y_pred have different number of output (2!=1)
             eqm1 = mean_squared_error(self.y_test, self.prediction_inverse)
             st.write('Erro Quadrático Médio (Mean squared error) modelo 1: ', eqm1)

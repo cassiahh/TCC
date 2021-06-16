@@ -23,6 +23,7 @@ COPY ./src /src
 COPY ./main.py /
 #COPY . .
 
+ENTRYPOINT [ "bash" ]
 #ENTRYPOINT [ "streamlit", "run" ]
 ##RUN streamlit run
 #CMD [ "main.py" ]
