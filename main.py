@@ -92,7 +92,11 @@ if __name__ == '__main__':
             if split_submit_button:
                 st.success('Configurado com sucesso!')
 
-        controller.prepare_data(controller.data, train_test, look_back, future_target)
+        try:
+            controller.prepare_data(controller.data, train_test, look_back, future_target)
+        except ValueError:
+            st.warning('Dados insuficientes para treino. Escolha outro ticker! ')
+
         X_train, y_train, X_validate, y_validate, x_test, y_test, scaler = controller.prepare_data(controller.data, train_test, look_back, future_target)
 
         st.subheader('Configure os hiperparâmetros dos modelos:')
