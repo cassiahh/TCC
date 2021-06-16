@@ -25,8 +25,8 @@ except:
     #pyautogui.hotkey('f5')
     pass
 
-st.title('LSTM WebApp for ETF')
-st.subheader('Análise de ETF no mercado com ML')
+st.title('LSTM webApp for ETF')
+st.title('(Análise de ETF no mercado com ML)')
 
 disclaimer()
 etf_ticker()
