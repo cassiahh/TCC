@@ -3,7 +3,7 @@ FROM python:3.9.5
 # set working directory
 WORKDIR /usr
 
-# virtualenv
+## virtualenv
 #ENV VIRTUAL_ENV=/opt/venv
 #RUN python3 -m venv $VIRTUAL_ENV
 #ENV PATH="$VIRTUAL_ENV/bin:$PATH"
@@ -15,7 +15,7 @@ RUN pip3 install -r requirements.txt
 #RUN pip3 install streamlit
 
 
-# Path
+## PATH
 #ENV PATH="/opt/venv/bin:$PATH"
 
 #RUN mkdir /src

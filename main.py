@@ -26,7 +26,7 @@ except:
     pass
 
 st.title('LSTM webApp for ETF')
-st.title('(Análise de ETF no mercado com ML)')
+#st.title('Análise de ETF no mercado com ML')
 
 disclaimer()
 etf_ticker()
