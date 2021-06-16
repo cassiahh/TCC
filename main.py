@@ -96,6 +96,7 @@ if __name__ == '__main__':
             controller.prepare_data(controller.data, train_test, look_back, future_target)
         except ValueError:
             st.warning('Dados insuficientes para treino. Escolha outro ticker! ')
+            st.stop()
 
         X_train, y_train, X_validate, y_validate, x_test, y_test, scaler = controller.prepare_data(controller.data, train_test, look_back, future_target)
 
