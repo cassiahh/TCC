@@ -46,7 +46,7 @@ class Predictor:
                 ticker = ticker.strip().upper()
                 #web scraping
                 st.write(f'Código do ETF inserido: {ticker}')
-                data = web.DataReader(ticker, data_source='yahoo', start='01-01-2018')
+                data = web.DataReader(ticker, data_source='yahoo', start='01-01-2017')
                 #fill NaN based on the previous value
                 data['Close'] = data['Close'].ffill()
                 data = data.bfill(axis=1)
