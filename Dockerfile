@@ -23,11 +23,11 @@ COPY ./src /src
 COPY ./main.py /
 #COPY . .
 
-ENTRYPOINT [ "bash" ]
+ENTRYPOINT [ "bash", "streamlit", "run" ]
 #ENTRYPOINT [ "streamlit", "run" ]
 ##RUN streamlit run
 #CMD [ "main.py" ]
 
-CMD [ "streamlit", "run", "main.py" ]
+CMD [ "main.py" ]
 
 EXPOSE 8501
