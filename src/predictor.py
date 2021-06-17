@@ -132,7 +132,7 @@ class Predictor:
         self.x_test, self.y_test = process_data(dataset_teste, look_back, future_target)
         self.y_test = np.array([list(a.ravel()) for a in self.y_test])
         #Separação do conjunto de dados de teste e separar um porcentagem para validação
-        self.X_train, self.X_validate, self.y_train, self.y_validate = train_test_split(X, y, test_size=(1-train_test/100), random_state=42)
+        self.X_train, self.X_validate, self.y_train, self.y_validate = train_test_split(X, y, test_size=(1-(train_test/100)), random_state=42)
 
         return self.X_train, self.X_validate, self.y_train, self.y_validate, self.x_test, self.y_test, self.scaler
 
