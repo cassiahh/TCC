@@ -104,15 +104,15 @@ if __name__ == '__main__':
         controller.set_parameters()
 
         st.header('Máquina Preditiva com LSTM networks')
-        predict_btn1 = st.button('Clique para construir modelo 1')
+        predict_btn1 = st.button('Clique para treinar modelo 1')
         if predict_btn1:
         #if st.checkbox('Clique para construir modelo 1'):
             controller.vanilla_lstm_predict(controller.neurons, look_back, controller.opt, controller.epochs, controller.batch_size)
             empty_model2 = st.empty()
 
             st.header('Máquina Preditiva com Stacked LSTM')
-            empty_model2.checkbox('Clique para construir modelo 2')
-            empty_model2.checkbox('Clique para construir modelo 2', True)
+            empty_model2.checkbox('Clique para treinar modelo 2')
+            empty_model2.checkbox('Clique para treinar modelo 2', True)
         #if st.checkbox('Clique para construir modelo 2'):
             controller.stacked_lstm_predict(look_back, controller.opt, controller.epochs, controller.batch_size)
             try:

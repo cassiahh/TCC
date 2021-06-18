@@ -2,9 +2,9 @@ FROM python:3.9.5
 
 EXPOSE 8501
 
-WORKDIR /
-
-ENV PYTHONUNBUFFERED 1
+#WORKDIR /
+#
+#ENV PYTHONUNBUFFERED 1
 # set working directory
 #WORKDIR /usr
 
@@ -33,9 +33,10 @@ COPY src /src
 
 #ENTRYPOINT [ "/bin/bash", "streamlit", "run" ]
 ##ENTRYPOINT [ "streamlit", "run" ]
-###RUN streamlit run
-##CMD [ "main.py" ]
-#
+##ENTRYPOINT [ "streamlit" ]
+
+##CMD [ "run", "main.py" ]
+
 #CMD [ "main.py" ]
 
 CMD streamlit run main.py
