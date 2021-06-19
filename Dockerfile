@@ -18,7 +18,7 @@ RUN pip3 install -r requirements.txt --no-cache-dir
 ## PATH
 #ENV PATH="/opt/venv/bin:$PATH"
 
-COPY . .
+#COPY . .
 COPY main.py ./main.py
 COPY src /src
 
