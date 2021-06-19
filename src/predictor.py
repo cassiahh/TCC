@@ -200,7 +200,7 @@ class Predictor:
             st.write("\nBach-Size: ", self.batch_size)
             st.write("\nOtimizador: ", self.chosen_optimizer)
             st.write("\nLearning Rate: 0.001")
-            st.write("\nActivation: 'tanh'")
+            #st.write("\nActivation: 'tanh'")
             #AttributeError: 'History' object has no attribute 'predict'
             # predictions = model.predict(self.x_test[:5])
             # st.write("\nPredictions shape do modelo 1: (look_back, future_target)", predictions.shape)
@@ -270,7 +270,7 @@ class Predictor:
             st.write("\nBach-Size: ", self.batch_size)
             st.write("\nOtimizador: ", self.chosen_optimizer)
             st.write("\nLearning Rate: 0.001")
-            st.write("\nActivation: 'tanh'")
+            #st.write("\nActivation: 'tanh'")
             st.write("\nUnidades de neurônios nas camadas de LSTM: 100, 50, 50")
             #AttributeError:
             # predictions = model2.predict(self.x_test[:5])
