@@ -22,7 +22,7 @@ Project Organization
     ├── data
     │   └── raw            <- The original, immutable data dump.
     │
-    ├── notebooks          <- Jupyter notebook. 
+    ├── notebook           <- Jupyter notebook. 
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
