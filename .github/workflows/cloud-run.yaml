@@ -3,6 +3,13 @@ on:
   push:
     branches:
       - main
+
+env:
+  PROJECT_ID: ${{ secrets.RUN_PROJECT }}
+  RUN_REGION: us-central1
+  SERVICE_NAME: lstm-for-etf
+
+
 jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
@@ -14,26 +21,41 @@ jobs:
     # Setup gcloud CLI
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
-        service_account_email: ${{ secrets.GCP_EMAIL }}
-        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
-        export_default_credentials: true
+        with:
+          version: '290.0.1'
+          service_account_key: ${{ secrets.RUN_SA_KEY }}
+          project_id: ${{ secrets.RUN_PROJECT }}
+#        service_account_email: ${{ secrets.GCP_EMAIL }}
+#        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
+#        export_default_credentials: true
 
     # Configure Docker with Credentials
     - name: Configure Docker
       run: |
-        gcloud auth configure-docker
+#        gcloud auth configure-docker
+             gcloud builds submit \
+             --quiet \
+             --config cloudbuild.yaml \
+             --substitutions _IMAGE_TAG=gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
 
     # Build the Docker image
-    - name: Build & Publish
-      run: |
-        gcloud config set project ${{ secrets.GCP_PROJECT }}
-        gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }}
-        gcloud config set run/region us-central1
+#    - name: Build & Publish
+#      run: |
+#        gcloud config set project ${{ secrets.GCP_PROJECT }}
+#        gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }}
+#        gcloud config set run/region us-central1
 
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |
-        gcloud run deploy ${{ secrets.GCP_APPLICATION }} --image gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }} \
-        --platform managed \
+#        gcloud run deploy ${{ secrets.GCP_APPLICATION }} --image gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }} \
+#        --platform managed \
+#        --allow-unauthenticated \
+##        --memory 512M
+        gcloud run deploy "$SERVICE_NAME" \
+        --quiet \
+        --region "$RUN_REGION" \
+        --image "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" \
+        --platform "managed" \
         --allow-unauthenticated \
-        --memory 512M
+        --port 8501
