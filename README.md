@@ -23,6 +23,7 @@ Project Organization
     │   └── raw            <- The original, immutable data dump.
     │
     ├── notebook           <- Jupyter notebook. 
+    │   └── Código_de_Pré_Projeto_de_TCC.ipynb 
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
