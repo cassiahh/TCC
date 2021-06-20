@@ -32,11 +32,11 @@ jobs:
     # Configure Docker with Credentials
     - name: Configure Docker
       run: |
-#        gcloud auth configure-docker
-             gcloud builds submit \
-             --quiet \
-             --config cloudbuild.yaml \
-             --substitutions _IMAGE_TAG=gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
+#       # gcloud auth configure-docker
+        gcloud builds submit \
+        --quiet \
+        --config cloudbuild.yaml \
+        --substitutions _IMAGE_TAG=gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
 
     # Build the Docker image
 #    - name: Build & Publish
