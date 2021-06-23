@@ -52,7 +52,6 @@ class Predictor:
                 data = data.bfill(axis=1)
             return data
         except:
-            #def file_selector(self):
             if st.checkbox('alternativa: se série temporal momentaneamente indisponível on-line'):
                 file = st.file_uploader("Insira um arquivo CSV", type="csv")
                 if file is not None:
@@ -95,7 +94,6 @@ class Predictor:
                 st.dataframe(self.data)
 
     # Data preparation
-    #@st.cache(suppress_st_warning=True)
     def prepare_data(self, df, train_test=80, look_back=5, future_target=1):
         try:
             df.index = df['Date']
@@ -153,7 +151,6 @@ class Predictor:
                 predict_submit_button = st.form_submit_button(label='Submit')
                 if predict_submit_button:
                     st.success('Configurado com sucesso!')
-                #st.write('Hiperparâmetros do modelo: ', 'neurons: ',self.neurons, ', optimizer: ', self.opt, ', epochs: ', self.epochs, ', batch size: ', self.batch_size )
         return self.neurons, self.opt, self.epochs, self.batch_size
 
     def vanilla_lstm_predict(self, neurons=128, look_back=5, optimizer='Adam', epochs=30, batch_size=2):
@@ -172,17 +169,14 @@ class Predictor:
         sys.stdout = old_stdout
         st.text(mystdout.getvalue())
 
-        #@st.cache(hash_funcs={keras.utils.object_identity.ObjectIdentityDictionary: my_hash_func})
         def train_model1(self):
-            model.compile(loss='mean_squared_error', optimizer=self.opt)  #, metrics=['accuracy']
+            model.compile(loss='mean_squared_error', optimizer=self.opt)
             #history = model.fit(self.X_train, self.y_train, epochs=epochs, validation_data=(self.X_validate, self.y_validate), shuffle=False, batch_size=batch_size, verbose=2)
             self.model = model.fit(self.X_train, self.y_train, epochs=self.epochs, validation_data=(self.X_validate, self.y_validate), shuffle=False, batch_size=self.batch_size, verbose=2)
             results = model.evaluate(self.x_test, self.y_test, batch_size=self.batch_size)
             #Salvando os valores preditos
             self.prediction = model.predict(self.x_test)
             self.prediction_inverse = self.scaler.inverse_transform(self.prediction)
-            #return model_compile, history, self.prediction, self.prediction_inverse
-            #self.prediction_inverse = prediction_inverse
             return self.model, results, self.prediction, self.prediction_inverse
 
         with st.spinner('Treinando modelo 1…'):
@@ -209,12 +203,10 @@ class Predictor:
             st.write("Avaliação com 'evaluate' (Scalar test loss):", results)
 
             porcentagem = (((self.prediction_inverse[-1]-self.prediction_inverse[-2])/self.prediction_inverse[-2])*100)
-            #st.write ('pos D-1: ',prediction_inverse[-9], 'pos D: ', prediction_inverse[-10])
             if self.prediction_inverse[-1] > self.prediction_inverse[-2]:
                 st.write('Segundo modelo 1, o valor vai subir em torno de %.6f %%' % (float(porcentagem)))
             else:
                 st.write('Segundo modelo 1, o valor vai cair em torno de %.6f %%' % (float(-porcentagem)))
-            #ValueError: y_true and y_pred have different number of output (2!=1)
             eqm1 = mean_squared_error(self.y_test, self.prediction_inverse)
             st.write('Erro Quadrático Médio (Mean squared error) modelo 1: ', eqm1)
         except ValueError:
@@ -245,7 +237,6 @@ class Predictor:
         sys.stdout = old_stdout
         st.text(mystdout.getvalue())
 
-        #@st.cache(hash_funcs={keras.utils.object_identity.ObjectIdentityDictionary: my_hash_func})
         def train_model2(self):
             model2.compile(optimizer=self.opt, loss='mean_squared_error')
             self.model2 = model2.fit(self.X_train, self.y_train, epochs=epochs, validation_data=(self.X_validate, self.y_validate), shuffle=False, batch_size=batch_size)
