@@ -62,11 +62,12 @@ if __name__ == '__main__':
 
         st.subheader('Preço fechamento x Volume transacionado')
         if st.checkbox('gráfico Scatterplot'):
+            scatterplot = st.empty()
             try:
                 graph_scatterplot(controller.data)
                 st.write('O Coeficiente de correlação de Pearson entre o Preço fechamento e o Volume transacionado é de:  %f ' % (controller.data['Close'].corr(controller.data['Volume'])))
             except AttributeError:
-                st.pyplot(graph_scatterplot(controller.data))
+                scatterplot.pyplot(graph_scatterplot(controller.data))
             except:
                 st.write('Temporariamente indisponível: reinsira o ticker')
                 #pass
@@ -74,13 +75,14 @@ if __name__ == '__main__':
         st.subheader('Variação diária dos preços')
         if st.checkbox('visualizar a Decomposição'):
             st.set_option('deprecation.showPyplotGlobalUse', False)
+            decomposicao = st.empty()
             try:
                 controller.data['variacao'] = controller.data['Close'].diff()
                 st.pyplot(graph_compare_plot('Date', 'Close', 'variacao', controller.data, controller.data, 'Análise comparativa da variação de preço '))
             except:
                 controller.data['Close'] = pd.to_numeric(controller.data['Close'], errors='coerce')
                 controller.data['variacao'] = controller.data['Close'].diff()
-                st.pyplot(graph_compare_plot('Date', 'Close', 'variacao', controller.data, controller.data, 'Análise comparativa da variação de preço '))
+                decomposicao.pyplot(graph_compare_plot('Date', 'Close', 'variacao', controller.data, controller.data, 'Análise comparativa da variação de preço '))
 
         #if controller.data is not None:
         st.subheader('Configure a divisão e modelagem dos dados')
