@@ -7,6 +7,7 @@ Título: ANÁLISE DE Exchange-Traded Fund NO MERCADO BRASILEIRO COM Machine Lear
 Aluna: Cássia Chin Bo Hing
 Orientador: Prof. Rodrigo Campos Bortoletto
 
+https://share.streamlit.io/cassiahh/tcc/main/main.py
 
 TCC 
 ==============================

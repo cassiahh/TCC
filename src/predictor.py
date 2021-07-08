@@ -177,7 +177,7 @@ class Predictor:
         def train_model1(self):
             model.compile(loss='mean_squared_error', optimizer=self.opt)
             #history = model.fit(self.X_train, self.y_train, epochs=epochs, validation_data=(self.X_validate, self.y_validate), shuffle=False, batch_size=batch_size, verbose=2)
-            self.model = model.fit(self.X_train, self.y_train, epochs=self.epochs, validation_data=(self.X_validate, self.y_validate), shuffle=False, batch_size=self.batch_size, verbose=0)
+            self.model = model.fit(self.X_train, self.y_train, epochs=self.epochs, validation_data=(self.X_validate, self.y_validate), shuffle=False, batch_size=self.batch_size, verbose=1)
             results = model.evaluate(self.x_test, self.y_test, batch_size=self.batch_size)
             #Salvando os valores preditos
             self.prediction = model.predict(self.x_test)
@@ -244,7 +244,7 @@ class Predictor:
 
         def train_model2(self):
             model2.compile(optimizer=self.opt, loss='mean_squared_error')
-            self.model2 = model2.fit(self.X_train, self.y_train, epochs=epochs, validation_data=(self.X_validate, self.y_validate), shuffle=False, batch_size=batch_size, verbose=0)
+            self.model2 = model2.fit(self.X_train, self.y_train, epochs=epochs, validation_data=(self.X_validate, self.y_validate), shuffle=False, batch_size=batch_size, verbose=2)
             results2 = model2.evaluate(self.x_test, self.y_test, batch_size=self.batch_size)
             self.prediction2 = model2.predict(self.x_test)
             #Reverse variable data scaling: Going back to the initial data scale
